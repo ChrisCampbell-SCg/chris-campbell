@@ -1,0 +1,890 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Chris Campbell — Gallatin, TN</title>
+  <meta name="description" content="Chris Campbell keeps jobs moving through paperwork, approvals, invoices, dates, vendors, and customers. Based in Gallatin, Tennessee.">
+  <meta name="robots" content="noindex, nofollow">
+  <link rel="icon" href="assets/chris-campbell.jpg">
+  <style>
+    @font-face {
+      font-family: "Source Sans 3";
+      font-style: normal;
+      font-weight: 200 900;
+      font-display: swap;
+      src: url("assets/fonts/source-sans-3.woff2") format("woff2");
+    }
+    @font-face {
+      font-family: "Source Sans 3";
+      font-style: italic;
+      font-weight: 400;
+      font-display: swap;
+      src: url("assets/fonts/source-sans-3-italic.woff2") format("woff2");
+    }
+    @font-face {
+      font-family: "Source Serif 4";
+      font-style: normal;
+      font-weight: 200 900;
+      font-display: swap;
+      src: url("assets/fonts/source-serif-4.woff2") format("woff2");
+    }
+
+    :root {
+      --bg: #f4f0e7;
+      --bg-alt: #ebe4d6;
+      --card: #fffcf7;
+      --ink: #1b242e;
+      --ink-soft: #4c5560;
+      --navy: #1a3148;
+      --navy-deep: #122233;
+      --accent: #8a552c;
+      --line: #d8d0c0;
+      --line-strong: #c8bfad;
+      --white: #ffffff;
+      --shadow: 0 12px 40px rgba(18, 34, 51, 0.10);
+      --serif: "Source Serif 4", "Iowan Old Style", Palatino, "Palatino Linotype", Georgia, serif;
+      --sans: "Source Sans 3", "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+      --max: 1120px;
+      --pad: clamp(20px, 4vw, 48px);
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      font-family: var(--sans);
+      font-size: 18px;
+      line-height: 1.6;
+      color: var(--ink);
+      background: var(--bg);
+      -webkit-font-smoothing: antialiased;
+      text-rendering: optimizeLegibility;
+    }
+    img { max-width: 100%; height: auto; display: block; }
+    a { color: var(--accent); }
+    a:hover { color: var(--navy); }
+
+    .skip {
+      position: absolute;
+      left: -999px;
+      top: 0;
+      background: var(--navy);
+      color: var(--white);
+      padding: 8px 16px;
+      z-index: 100;
+    }
+    .skip:focus { left: 12px; top: 12px; }
+
+    .wrap {
+      width: min(var(--max), calc(100% - 2 * var(--pad)));
+      margin-inline: auto;
+    }
+
+    /* Header */
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      background: rgba(244, 240, 231, 0.92);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      border-bottom: 1px solid var(--line);
+    }
+    .header-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      min-height: 64px;
+      padding-block: 8px;
+    }
+    .wordmark {
+      font-family: var(--serif);
+      font-weight: 600;
+      font-size: 1.05rem;
+      color: var(--navy);
+      text-decoration: none;
+      letter-spacing: -0.01em;
+      white-space: nowrap;
+    }
+    .wordmark:hover { color: var(--accent); }
+    nav {
+      display: flex;
+      align-items: center;
+      gap: 4px 18px;
+      flex-wrap: wrap;
+      justify-content: flex-end;
+    }
+    nav a {
+      color: var(--ink-soft);
+      text-decoration: none;
+      font-size: 0.95rem;
+      font-weight: 500;
+      padding: 6px 0;
+    }
+    nav a:hover { color: var(--navy); }
+    nav .btn-nav {
+      display: inline-flex;
+      align-items: center;
+      background: var(--navy);
+      color: var(--white);
+      padding: 8px 16px;
+      border-radius: 999px;
+      font-weight: 600;
+      font-size: 0.92rem;
+      text-decoration: none;
+      margin-left: 6px;
+    }
+    nav .btn-nav:hover { background: var(--navy-deep); color: var(--white); }
+
+    /* Hero */
+    .hero {
+      padding: clamp(36px, 6vw, 80px) 0 clamp(48px, 7vw, 88px);
+    }
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.15fr 0.85fr;
+      gap: clamp(28px, 5vw, 72px);
+      align-items: center;
+    }
+    .eyebrow {
+      font-size: 0.82rem;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin: 0 0 14px;
+    }
+    h1 {
+      font-family: var(--serif);
+      font-weight: 600;
+      font-size: clamp(2.4rem, 5.4vw, 4.1rem);
+      line-height: 1.08;
+      letter-spacing: -0.025em;
+      color: var(--navy);
+      margin: 0 0 16px;
+    }
+    .headline {
+      font-family: var(--serif);
+      font-weight: 500;
+      font-size: clamp(1.25rem, 2.3vw, 1.65rem);
+      line-height: 1.35;
+      color: var(--ink);
+      margin: 0 0 14px;
+      max-width: 28ch;
+    }
+    .lede {
+      color: var(--ink-soft);
+      font-size: 1.05rem;
+      margin: 0 0 28px;
+      max-width: 38ch;
+    }
+    .actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      min-height: 48px;
+      padding: 10px 22px;
+      border-radius: 999px;
+      font-family: var(--sans);
+      font-weight: 600;
+      font-size: 1rem;
+      text-decoration: none;
+      border: 1.5px solid transparent;
+      cursor: pointer;
+    }
+    .btn-primary {
+      background: var(--navy);
+      color: var(--white);
+    }
+    .btn-primary:hover { background: var(--navy-deep); color: var(--white); }
+    .btn-secondary {
+      background: transparent;
+      color: var(--navy);
+      border-color: var(--line-strong);
+    }
+    .btn-secondary:hover {
+      border-color: var(--navy);
+      color: var(--navy);
+      background: var(--white);
+    }
+    .portrait {
+      justify-self: end;
+      width: min(100%, 400px);
+    }
+    .portrait img {
+      width: 100%;
+      aspect-ratio: 4 / 5;
+      object-fit: cover;
+      object-position: center 15%;
+      border-radius: 20px;
+      box-shadow: var(--shadow);
+      background: var(--bg-alt);
+    }
+
+    /* Sections */
+    section { padding: 8px 0 72px; scroll-margin-top: 76px; }
+    .section-kicker {
+      font-size: 0.8rem;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin: 0 0 8px;
+    }
+    h2 {
+      font-family: var(--serif);
+      font-weight: 600;
+      font-size: clamp(1.8rem, 3vw, 2.35rem);
+      letter-spacing: -0.02em;
+      color: var(--navy);
+      margin: 0 0 28px;
+    }
+    .about-prose {
+      max-width: 68ch;
+    }
+    .about-prose p {
+      margin: 0 0 1.1em;
+      color: var(--ink);
+    }
+    .about-prose p:last-child { margin-bottom: 0; }
+
+    /* What I do */
+    .lanes {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+    .lane {
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      padding: 24px 24px 22px;
+    }
+    .lane h3 {
+      font-family: var(--serif);
+      font-weight: 600;
+      font-size: 1.22rem;
+      letter-spacing: -0.015em;
+      color: var(--navy);
+      margin: 0 0 12px;
+      line-height: 1.3;
+    }
+    .lane p {
+      margin: 0 0 0.7em;
+      color: var(--ink);
+      font-size: 1.02rem;
+      line-height: 1.55;
+    }
+    .lane p:last-child { margin-bottom: 0; }
+
+    /* What I'm looking for */
+    .looking-list {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      border-top: 1px solid var(--line);
+    }
+    .looking-list li {
+      padding: 18px 28px 18px 0;
+      border-bottom: 1px solid var(--line);
+      color: var(--ink);
+      font-size: 1.08rem;
+      font-weight: 500;
+    }
+    .looking-list li.wide { grid-column: 1 / -1; }
+
+    /* Experience */
+    .timeline {
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+      border-top: 1px solid var(--line);
+    }
+    .role {
+      display: grid;
+      grid-template-columns: 210px 1fr;
+      gap: 28px;
+      padding: 32px 0;
+      border-bottom: 1px solid var(--line);
+    }
+    .role-when {
+      font-weight: 600;
+      color: var(--navy);
+      font-size: 0.98rem;
+      padding-top: 4px;
+      line-height: 1.4;
+    }
+    .role-place {
+      display: block;
+      font-weight: 500;
+      color: var(--ink-soft);
+      font-size: 0.92rem;
+      margin-top: 4px;
+    }
+    .role h3 {
+      font-family: var(--serif);
+      font-weight: 600;
+      font-size: 1.35rem;
+      letter-spacing: -0.015em;
+      color: var(--navy);
+      margin: 0 0 4px;
+      line-height: 1.25;
+    }
+    .org {
+      margin: 0 0 14px;
+      color: var(--ink-soft);
+      font-weight: 500;
+    }
+    .role ul {
+      margin: 0;
+      padding: 0 0 0 1.15em;
+    }
+    .role li {
+      margin: 0 0 0.55em;
+      padding-left: 0.15em;
+    }
+    .role li:last-child { margin-bottom: 0; }
+
+    /* Skills */
+    .skills-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+    }
+    .skill-card, .license-card, .edu-card {
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      padding: 22px 24px 20px;
+    }
+    .skill-card h3, .license-card h3, .edu-card h3 {
+      margin: 0 0 10px;
+      font-size: 1.02rem;
+      font-weight: 700;
+      color: var(--navy);
+    }
+    .skill-card.wide, .license-card, .edu-card.wide { grid-column: 1 / -1; }
+    .chips {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+    .chips li {
+      background: var(--bg);
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      padding: 6px 12px;
+      font-size: 0.92rem;
+      color: var(--ink);
+    }
+    .licenses {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+    .licenses li {
+      display: grid;
+      grid-template-columns: 7.5rem 1fr;
+      gap: 12px;
+      align-items: baseline;
+      padding: 10px 0;
+      border-bottom: 1px solid var(--line);
+    }
+    .licenses li:last-child { border-bottom: 0; padding-bottom: 0; }
+    .licenses li:first-child { padding-top: 0; }
+    .tag {
+      display: inline-block;
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      padding: 3px 8px;
+      border-radius: 999px;
+      width: fit-content;
+    }
+    .tag-active {
+      background: #e4efe6;
+      color: #215c33;
+    }
+    .tag-inactive {
+      background: var(--bg-alt);
+      color: #5a5044;
+    }
+    .edu-row {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 12px;
+      align-items: start;
+    }
+    .edu-card p { margin: 0; color: var(--ink-soft); }
+    .edu-card .school {
+      font-weight: 600;
+      color: var(--navy);
+      font-size: 1.05rem;
+    }
+    .edu-year {
+      font-weight: 600;
+      color: var(--ink-soft);
+      white-space: nowrap;
+    }
+
+    /* Contact */
+    #contact {
+      padding-bottom: 88px;
+    }
+    .contact-card {
+      background: var(--navy);
+      color: #eef3f7;
+      border-radius: 20px;
+      padding: clamp(28px, 5vw, 48px);
+      display: grid;
+      grid-template-columns: 1.2fr 0.8fr;
+      gap: 32px;
+      align-items: center;
+      box-shadow: var(--shadow);
+    }
+    .contact-card h2 {
+      color: var(--white);
+      margin-bottom: 10px;
+    }
+    .contact-card p {
+      margin: 0 0 22px;
+      color: #d5dee6;
+      max-width: 46ch;
+    }
+    .contact-card .btn-primary {
+      background: var(--white);
+      color: var(--navy);
+    }
+    .contact-card .btn-primary:hover {
+      background: var(--bg);
+      color: var(--navy-deep);
+    }
+    .contact-card .btn-secondary {
+      color: var(--white);
+      border-color: rgba(255,255,255,0.35);
+    }
+    .contact-card .btn-secondary:hover {
+      background: rgba(255,255,255,0.08);
+      border-color: var(--white);
+      color: var(--white);
+    }
+    .contact-details {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+    }
+    .contact-details span {
+      display: block;
+      font-size: 0.78rem;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: #b9c6d1;
+      margin-bottom: 2px;
+    }
+    .contact-details a, .contact-details b {
+      color: var(--white);
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 1.08rem;
+      overflow-wrap: anywhere;
+    }
+    .contact-details a:hover { text-decoration: underline; color: var(--white); }
+
+    footer {
+      border-top: 1px solid var(--line);
+      padding: 22px 0 36px;
+      color: var(--ink-soft);
+      font-size: 0.9rem;
+    }
+    .footer-inner {
+      display: flex;
+      justify-content: space-between;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    @media (max-width: 860px) {
+      .hero-grid {
+        grid-template-columns: 1fr;
+        gap: 28px;
+      }
+      .portrait {
+        justify-self: center;
+        width: min(100%, 280px);
+      }
+      .headline { max-width: none; }
+      .role {
+        grid-template-columns: 1fr;
+        gap: 8px;
+        padding: 26px 0;
+      }
+      .lanes { grid-template-columns: 1fr; }
+      .looking-list { grid-template-columns: 1fr; }
+      .skills-grid { grid-template-columns: 1fr; }
+      .skill-card.wide, .license-card { grid-column: auto; }
+      .contact-card { grid-template-columns: 1fr; }
+      .licenses li { grid-template-columns: 6.5rem 1fr; }
+    }
+
+    @media (max-width: 560px) {
+      body { font-size: 17px; }
+      nav a:not(.btn-nav) { display: none; }
+      .portrait { width: min(72%, 240px); margin-inline: auto; }
+      .actions { flex-direction: column; }
+      .actions .btn { width: 100%; }
+      .contact-card .actions { flex-direction: column; }
+      .licenses li {
+        grid-template-columns: 1fr;
+        gap: 4px;
+      }
+      .edu-row { grid-template-columns: 1fr; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+    }
+  </style>
+</head>
+<body>
+  <a class="skip" href="#main">Skip to content</a>
+  <header>
+    <div class="wrap header-inner">
+      <a class="wordmark" href="#top">Chris Campbell</a>
+      <nav aria-label="Primary">
+        <a href="#work">What I do</a>
+        <a href="#about">About</a>
+        <a href="#looking">Looking for</a>
+        <a href="#experience">Experience</a>
+        <a class="btn-nav" href="#contact">Let's talk</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="hero" id="top">
+      <div class="wrap hero-grid">
+        <div>
+          <p class="eyebrow">Gallatin, Tennessee</p>
+          <h1>Chris Campbell</h1>
+          <p class="headline">I keep the work moving.</p>
+          <p class="lede">Paperwork, approvals, invoices, dates, vendors and customers, handled.</p>
+          <div class="actions">
+            <a class="btn btn-primary" href="mailto:Campbellcj90@gmail.com">Let's talk</a>
+            <a class="btn btn-secondary" href="assets/Chris_Campbell_Resume.pdf" download>Download resume</a>
+          </div>
+        </div>
+        <figure class="portrait">
+          <img src="assets/chris-campbell.jpg" width="900" height="1125" alt="Professional photo of Chris Campbell, smiling, in a navy suit and white shirt.">
+        </figure>
+      </div>
+    </section>
+
+    <section id="work">
+      <div class="wrap">
+        <h2>What I do</h2>
+        <div class="lanes">
+          <article class="lane">
+            <h3>Real estate transaction coordination</h3>
+            <p>I keep a checklist on every file so contracts, addenda, disclosures, inspection reports, lender packages, and title paperwork keep moving toward a fixed closing date.</p>
+            <p>I coordinate buyers, sellers, lenders, inspectors, title companies, and attorneys, and manage several files at once under tight deadlines.</p>
+          </article>
+          <article class="lane">
+            <h3>Construction and telecom project coordination</h3>
+            <p>I turn engineered design packages into priced proposals, then take the job through permitting, installation, AHJ inspection, commissioning, and closeout.</p>
+            <p>I coordinate subcontractors, vendors, and building authorities, keep complete job files, and follow up on invoices.</p>
+          </article>
+          <article class="lane">
+            <h3>Problem solving and troubleshooting</h3>
+            <p>On two-way radio and DAS/BDA projects, I provided hands-on, on-site troubleshooting, often as the first responder for equipment issues before looping in technical teams.</p>
+            <p>On real estate files, I work through the issues that come up in a multi-party transaction and keep the paperwork moving toward a fixed closing date.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="about">
+      <div class="wrap">
+        <h2>About me</h2>
+        <div class="about-prose">
+          <p>I work through problems and keep the file moving until the job is done.</p>
+          <p>I'm a find-a-solution guy.</p>
+          <p>I've untangled complex situations — a home purchase with a lot of outside factors, or a technical problem that has to be sorted out before it can be solved. They end up resolved.</p>
+          <p>I've coordinated real estate transactions against closing dates, and construction and telecom projects from quote through closeout.</p>
+          <p>I'm looking for work in coordination, estimating and quote-writing, or admin.</p>
+          <p>I use AI tools every day for research, drafting and tracking, and I check the results before anything goes out. I attend AI Lab weekly.</p>
+          <p>Outside work, I'm a husband and a dad to a 2-year-old. We have a yellow lab, and I like to golf.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="looking">
+      <div class="wrap">
+        <h2>What I'm looking for</h2>
+        <ul class="looking-list">
+          <li class="wide">Open to Gallatin, Hendersonville, Mt. Juliet, Lebanon, or Nashville for the right position, or remote</li>
+          <li>Full-time W-2</li>
+          <li>Available to start soon</li>
+          <li>Day trips only, no overnight travel</li>
+          <li>Home evenings and weekends</li>
+        </ul>
+      </div>
+    </section>
+
+    <section id="experience">
+      <div class="wrap">
+        <h2>Experience</h2>
+        <div class="timeline">
+
+          <article class="role">
+            <div class="role-when">
+              Nov 2025 – 2026
+              <span class="role-place">Hendersonville, TN</span>
+            </div>
+            <div>
+              <h3>Affiliate Broker</h3>
+              <p class="org">Compass</p>
+              <ul>
+                <li>After relocating to Tennessee, built a client pipeline, marketing systems, and referral network from the ground up in a new market.</li>
+                <li>Coordinated multi-party transactions across buyers, sellers, lenders, inspectors, title companies, and attorneys, managing several files at once under tight deadlines.</li>
+                <li>Monitored local market trends and pricing data to give clients informed, data-backed recommendations.</li>
+              </ul>
+            </div>
+          </article>
+
+          <article class="role">
+            <div class="role-when">
+              2023 – Nov 2025
+              <span class="role-place">Florida</span>
+            </div>
+            <div>
+              <h3>Real Estate Agent</h3>
+              <p class="org">Better Homes and Gardens Real Estate</p>
+              <ul>
+                <li>Managed residential transactions from consultations through negotiation, contract-to-close, and post-sale relationship management.</li>
+                <li>Kept a checklist on every file so contracts, addenda, disclosures, inspection reports, lender packages, and title paperwork kept moving toward a fixed closing date.</li>
+                <li>Built long-term trust with clients through consistent communication throughout the transaction process.</li>
+              </ul>
+            </div>
+          </article>
+
+          <article class="role">
+            <div class="role-when">
+              Mar 2022 – Dec 2022
+              <span class="role-place">Gainesville, FL</span>
+            </div>
+            <div>
+              <h3>Outside Sales Representative</h3>
+              <p class="org">UniFirst Corporation</p>
+              <ul>
+                <li>Conducted on-site assessments and presentations for uniform rental and facility service programs, prepared tailored proposals for business clients, and closed multi-year service agreements.</li>
+                <li>Kept CRM records accurate and coordinated with service and operations teams to onboard new customers.</li>
+              </ul>
+            </div>
+          </article>
+
+          <article class="role">
+            <div class="role-when">
+              Nov 2021 – Feb 2022
+              <span class="role-place">Gainesville, FL</span>
+            </div>
+            <div>
+              <h3>Customer Service Representative</h3>
+              <p class="org">State Farm Insurance — Tish Oleksy Agency</p>
+              <ul>
+                <li>Answered customer inquiries on coverage, eligibility, policy changes, transfers, claim submissions, and billing, providing prompt, accurate service.</li>
+                <li>Used a needs-based review process to educate customers about their insurance options.</li>
+                <li>Kept accurate records of customer interactions and coordinated with agency team members on customer follow-up.</li>
+              </ul>
+            </div>
+          </article>
+
+          <article class="role">
+            <div class="role-when">
+              Jan 2014 – 2016
+              <br>Rehired 2018 – 2021
+              <span class="role-place">Gainesville, FL</span>
+            </div>
+            <div>
+              <h3>Account Manager / Outside Sales / Project Manager</h3>
+              <p class="org">Ashtin Communications, Inc. (Motorola Dealer)</p>
+              <ul>
+                <li>Rehired in 2018 after a first stint from January 2014 to 2016; owned the Orlando territory, managing 25+ accounts through delivery, installation, invoicing, and ongoing support.</li>
+                <li>Designed, quoted, and bid two-way radio systems from the manufacturers Ashtin represented as a dealer (Motorola, Icom, and Vertex Standard), including coax routing, repeater placement, and feature programming; reviewed competitor pricing when available.</li>
+                <li>Delivered many DAS/BDA in-building wireless systems, each a 6 to 8 month project from initial quote to commissioning: converted engineered design packages (designed by internal leadership or Motorola engineering) into priced proposals, then managed permitting, installation, AHJ inspection to NFPA guidelines, coverage testing, commissioning, and closeout.</li>
+                <li>Worked with decision-makers at every level, from front office staff and facility managers to security directors, chiefs of engineering, and C-suite executives.</li>
+                <li>Coordinated owners, facility and security leadership, engineering, vendors, subcontractors, and AHJs to keep scope, schedule, and documentation aligned, including through Procore on a DAS project.</li>
+                <li>Kept complete job files (proposals, scopes, purchase orders, invoices, correspondence) and detailed CRM records of account history and pipeline status.</li>
+                <li>Managed accounts receivable, following up on open invoices directly with customers and supplying the backup they needed to close them.</li>
+                <li>Provided hands-on, on-site troubleshooting and system support, often serving as first responder for equipment issues before looping in technical teams.</li>
+              </ul>
+            </div>
+          </article>
+
+          <article class="role">
+            <div class="role-when">
+              2017 – 2018
+              <span class="role-place">Nashville, TN</span>
+            </div>
+            <div>
+              <h3>Rental Program Manager &amp; Outside Sales Representative</h3>
+              <p class="org">NashComm</p>
+              <ul>
+                <li>Managed the entire rental two-way radio fleet: organized, logged, set up, and programmed radios and delivered them to customer locations.</li>
+                <li>Also served as outside sales representative, selling two-way radios, accessories, and repeater systems.</li>
+              </ul>
+            </div>
+          </article>
+
+          <article class="role">
+            <div class="role-when">
+              2012 – Oct 2013
+              <span class="role-place">Gainesville, FL</span>
+            </div>
+            <div>
+              <h3>Financial Advisor</h3>
+              <p class="org">Edward Jones</p>
+              <ul>
+                <li>Built long-term client relationships through consultative, needs-based financial planning.</li>
+              </ul>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <section id="skills">
+      <div class="wrap">
+        <p class="section-kicker">Licenses, skills &amp; education</p>
+        <h2>What I bring</h2>
+        <div class="skills-grid">
+          <div class="skill-card">
+            <h3>Account management</h3>
+            <ul class="chips">
+              <li>B2B account management</li>
+              <li>Client relationship management</li>
+              <li>Account growth &amp; retention</li>
+              <li>Negotiation</li>
+              <li>Presentations &amp; proposals</li>
+              <li>Accounts receivable follow-up</li>
+            </ul>
+          </div>
+          <div class="skill-card">
+            <h3>Estimating &amp; project delivery</h3>
+            <ul class="chips">
+              <li>Quoting</li>
+              <li>Bids &amp; priced proposals</li>
+              <li>Project management</li>
+              <li>Permitting</li>
+              <li>AHJ inspections (NFPA)</li>
+              <li>Commissioning &amp; closeout</li>
+              <li>Vendor &amp; subcontractor coordination</li>
+              <li>Purchase orders &amp; invoicing</li>
+              <li>Contract-to-close coordination</li>
+            </ul>
+          </div>
+          <div class="skill-card wide">
+            <h3>Technical &amp; tools</h3>
+            <ul class="chips">
+              <li>Two-way radio systems (Motorola, Icom, Vertex Standard)</li>
+              <li>DAS/BDA in-building wireless</li>
+              <li>Radio programming</li>
+              <li>Rental fleet management</li>
+              <li>Technical troubleshooting</li>
+              <li>Procore</li>
+              <li>CRM</li>
+              <li>Microsoft Office (Word, Excel, Outlook, PowerPoint)</li>
+              <li>AI tools (daily use; I check the results)</li>
+              <li>Market analysis</li>
+            </ul>
+          </div>
+          <div class="license-card">
+            <h3>Licenses</h3>
+            <ul class="licenses">
+              <li>
+                <span class="tag tag-active">Active</span>
+                <div>Affiliate Broker, Tennessee</div>
+              </li>
+              <li>
+                <span class="tag tag-active">Active</span>
+                <div>Florida Real Estate Sales Associate <span style="color:var(--ink-soft)">(since August 2023)</span></div>
+              </li>
+              <li>
+                <span class="tag tag-inactive">Not active</span>
+                <div>Previously held: FINRA Series 7 and Series 66 (Edward Jones); Florida Life &amp; Health (Edward Jones, State Farm); Florida Property &amp; Casualty (State Farm)</div>
+              </li>
+            </ul>
+          </div>
+          <div class="edu-card wide">
+            <h3>Education</h3>
+            <div class="edu-row">
+              <div>
+                <p class="school">Florida Southern College</p>
+                <p>Bachelor of Science in Business Administration, Concentration in Management · Lakeland, FL</p>
+              </div>
+              <p class="edu-year">2008 – 2012</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact">
+      <div class="wrap">
+        <div class="contact-card">
+          <div>
+            <p class="section-kicker" style="color:#e0b58a;margin-bottom:8px;">Contact</p>
+            <h2>Let's talk</h2>
+            <p>If you have a role in coordination, estimating and quote-writing, or admin, I'd welcome a conversation. I'm based in Gallatin, Tennessee.</p>
+            <div class="actions">
+              <a class="btn btn-primary" href="mailto:Campbellcj90@gmail.com">Email me</a>
+              <a class="btn btn-secondary" href="assets/Chris_Campbell_Resume.pdf" download>Download resume</a>
+            </div>
+          </div>
+          <ul class="contact-details">
+            <li>
+              <span>Email</span>
+              <a href="mailto:Campbellcj90@gmail.com">Campbellcj90@gmail.com</a>
+            </li>
+            <li>
+              <span>Phone</span>
+              <a href="tel:+16155753218">(615) 575-3218</a>
+            </li>
+            <li>
+              <span>Location</span>
+              <b>Gallatin, TN</b>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="wrap footer-inner">
+      <span>© 2026 Chris Campbell · Gallatin, TN</span>
+    </div>
+  </footer>
+</body>
+</html>
